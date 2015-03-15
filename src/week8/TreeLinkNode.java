@@ -1,36 +1,37 @@
-package week7;
+package week8;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class TreeNode {
+import week7.TreeNode;
+
+public class TreeLinkNode {
 	
 	int val;
-	public TreeNode left;
-	public TreeNode right;
-	public TreeNode(int x) { val = x; }
-    public static TreeNode deserializeTree(String s){
+	TreeLinkNode left, right, next;
+	TreeLinkNode(int x) { val = x; }
+    public static TreeLinkNode deserializeTree(String s){
 		
     	s = s.substring(1,s.length()-1);
     	String[] strs = s.split(",");
     	if(strs.length==0)
     		return null;
     	
-    	Queue<TreeNode> q = new LinkedList<TreeNode>();
-    	TreeNode root = new TreeNode(Integer.parseInt(strs[0])); 
+    	Queue<TreeLinkNode> q = new LinkedList<TreeLinkNode>();
+    	TreeLinkNode root = new TreeLinkNode(Integer.parseInt(strs[0])); 
     	q.add(root);
     	int i=1;
     	while(!q.isEmpty()){
-    		TreeNode n = q.poll();
+    		TreeLinkNode n = q.poll();
     		if(i< strs.length && !strs[i].equals("#")){
-    			TreeNode left = new TreeNode(Integer.parseInt(strs[i]));
+    			TreeLinkNode left = new TreeLinkNode(Integer.parseInt(strs[i]));
     			n.left=left;
     			//System.out.println(strs[i]);
     			q.add(left);   			
     		}
     		i++;
 			if(i<strs.length && !strs[i].equals("#")){
-				TreeNode right = new TreeNode(Integer.parseInt(strs[i]));
+				TreeLinkNode right = new TreeLinkNode(Integer.parseInt(strs[i]));
 				n.right=right;
     			q.add(right);
 			}
@@ -42,4 +43,5 @@ public class TreeNode {
     	TreeNode node = TreeNode.deserializeTree("{1,2,3,#,#,4,#,#,5}");
     	System.out.println(node);
     }
+
 }
