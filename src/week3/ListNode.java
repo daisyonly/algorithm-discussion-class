@@ -3,7 +3,7 @@ package week3;
 public class ListNode {
 	public int val;
 	public ListNode next;
-	ListNode(int x) {
+	public ListNode(int x) {
 	val = x;
 	next = null;
 	}
@@ -15,7 +15,7 @@ public class ListNode {
 	
 	/** {2 3 4 5 6} */
 	public static ListNode generateListNode(String str){
-		String ls[] = str.split(" ");
+		String ls[] = str.split(",");
 		ListNode pre = null;
 		for(int i = ls.length-1;i>=0;i--){
 			ListNode n = new ListNode(Integer.parseInt(ls[i]), pre);
