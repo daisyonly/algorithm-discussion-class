@@ -20,9 +20,6 @@ public class ConvertSortedListtoBinarySearchTree {
    }
    private TreeNode dfs(int left, int right) {
 	   if(left > right) return null;
-	   if(left == right){
-		   return new TreeNode(list.get(left));
-	   }
 	   int mid = (right-left)/2 +left;
 	   int aa = list.get(mid);
 	   TreeNode node = new TreeNode(aa);
