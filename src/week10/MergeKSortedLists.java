@@ -35,16 +35,7 @@ public class MergeKSortedLists {
 			}
 			curNode = curNode.next;
 		}
-		while (curLeftNode != null) {
-			curNode.next = curLeftNode;
-			curNode = curNode.next;
-			curLeftNode = curLeftNode.next;
-		}
-		while(curRightNode != null){
-			curNode.next = curRightNode;
-			curNode = curNode.next;
-			curRightNode = curRightNode.next;
-		}
+		curNode.next = curRightNode == null ? curLeftNode:curRightNode;
 		return dummy.next;
 	}
 	
