@@ -4,6 +4,7 @@ package week10;
 public class SqrtX {
 	
     public int sqrt(int x) {
+    	if(x==0) return 0;
     	if(x<4) return 1;
     	int left =1;
     	int right = x;
