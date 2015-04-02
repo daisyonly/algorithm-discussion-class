@@ -8,62 +8,51 @@ import java.util.Queue;
 import java.util.Set;
 
 //https://leetcode.com/problems/word-ladder/
-public class WordLadder {
+public class WordLadderEnum {
 	
     public int ladderLength(String start, String end, Set<String> dict) {
     	Map<String,Integer> map = new HashMap<String,Integer>();
     	Queue<String> queue = new LinkedList<String>();
     	queue.add(start);
     	map.put(start, 1);
-    	int distance =0;
     	while(!queue.isEmpty()){
     		String cur = queue.poll();
     		int dis = map.get(cur);
-    		if(getEditDistance(cur, end)==1){
-    			return dis+1;
-    		}
-    		for(String aString :dict){
-    			if(!map.containsKey(aString)&&getEditDistance(aString, cur)==1){
-    				queue.add(aString);
-    				map.put(aString,dis+1);
+    		char[] c = cur.toCharArray();
+    		for(int i=0; i < c.length; i++){
+    			char original = c[i];
+    			for(char j = 'a'; j <= 'z'; j++){
+    				if(j!=original){
+    					c[i]=j;
+    					String tmp = String.valueOf(c);
+    					if(tmp.equals(end)){
+    						return dis+1;
+    					}
+    					if(dict.contains(tmp)&&!map.containsKey(tmp)){
+    						queue.add(tmp);
+    						map.put(tmp, dis+1);
+    					}
+    				}
     			}
+    			c[i] = original;
     		}
     	}
-		return distance;
-        
+		return 0;       
     }
     
-    private int getEditDistance(String s1, String s2) {
-		int[][] dis = new int[s1.length()+1][s2.length()+1];
-		for(int i=0; i <= s1.length(); i++){
-			dis[i][0] = i;
-		}
-		for(int i=0; i <= s2.length(); i++){
-			dis[0][i] = i;
-		}
-		for(int i = 1;i <= s1.length(); i++){
-			for(int j = 1; j <= s2.length(); j++){
-				if(s1.charAt(i-1) == s2.charAt(j-1)){
-					dis[i][j] = dis[i-1][j-1];
-				}else{
-					dis[i][j] = Math.min(Math.min(dis[i-1][j], dis[i][j-1]), dis[i-1][j-1])+1;
-				}
-			}
-		} 	   	
-    	return dis[s1.length()][s2.length()];		
-	}
     private static void addAll(Set<String> dict, String[] aaa) {
 		for(String s:aaa){
 			dict.add(s);
 		}
 	}
     public static void main(String[] args) {
-    	WordLadder a = new WordLadder();
+    	WordLadderEnum a = new WordLadderEnum();
     	String start = "hit";
-    	String end = "cog";
+    	String end = "hii";
     	Set<String> dict = new HashSet<String>();     	
     	String [] aaa = {"hot","dot","dog","lot","log"};
     	addAll(dict, aaa);
+    	System.out.println(dict.contains("hot"));
     	int ans = a.ladderLength(start, end, dict);
     	System.out.println(ans);
 
