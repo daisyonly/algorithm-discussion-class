@@ -6,8 +6,7 @@ import java.util.List;
 public class RestoreIPAddresses {
 	
     public List<String> restoreIpAddresses(String s) {
-    	if(s.length()>12) return null;
-    	char[] c = s.toCharArray();
+
     	
 		return null;
         
