@@ -3,15 +3,15 @@ package week11;
 import java.util.LinkedList;
 import java.util.List;
 
-//https://leetcode.com/problems/n-queens-ii/
-public class NQueensII {
-	private int ans=0 ;
+//https://leetcode.com/problems/n-queens/
+public class NQueensMine {
+	private List<String[]> ans = new LinkedList<String[]>();
 	private boolean[] checkCol;
 	private boolean[] checkDia1;
 	private boolean[] checkDia2;
 	private int[] position;
 	
-	public int totalNQueens(int n) {
+    public List<String[]> solveNQueens(int n) {
     	checkCol = new boolean[n];
     	checkDia1 = new boolean[2*n];
     	checkDia2 = new boolean[2*n];
@@ -22,7 +22,16 @@ public class NQueensII {
 
 	private void dfs(int raw,int n) {
 		if(raw == n ){
-			ans++;
+			String [] tmp = new String[n];
+			for(int i=0; i<n; i++){
+				StringBuffer rowStr = new StringBuffer(n);
+				for(int j=0;j<n;j++){
+					if(j==position[i]) rowStr.append('Q');
+					else rowStr.append('.');
+				}
+				tmp[i] = rowStr.toString();
+			}
+			ans.add(tmp);
 		}
 		
 		for(int i=0;i<n;i++){
@@ -43,8 +52,10 @@ public class NQueensII {
 		if(!checkCol[j] && !checkDia1[i+j] && ! checkDia2[i-j+n]) return true;
 		return false;
 	}
+	
 	public static void main(String[] args){
-		NQueensII a = new NQueensII();
-		System.out.println(a.totalNQueens(4));
+		NQueensMine a = new NQueensMine();
+		System.out.println(a.solveNQueens(4).size());
 	}
+	
 }

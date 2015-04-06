@@ -11,6 +11,7 @@ public class QuickSort {
 		quickSort(data, index[1], end);
 	}
 
+	@SuppressWarnings("unused")
 	private int partition(int[] data, int start, int end) {
 		Random random = new Random();
 		int index = random.nextInt(end - start + 1)+ start;
