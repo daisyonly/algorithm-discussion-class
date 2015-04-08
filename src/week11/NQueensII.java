@@ -1,8 +1,5 @@
 package week11;
 
-import java.util.LinkedList;
-import java.util.List;
-
 //https://leetcode.com/problems/n-queens-ii/
 public class NQueensII {
 	private int ans=0 ;
