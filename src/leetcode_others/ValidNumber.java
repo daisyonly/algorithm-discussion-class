@@ -36,6 +36,8 @@ public class ValidNumber {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		ValidNumber aMine = new ValidNumber();
+		System.out.println(aMine.isNumber(" 005047e+6"));
 
 	}
 
