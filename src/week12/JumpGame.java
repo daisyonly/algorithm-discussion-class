@@ -1,13 +1,14 @@
 package week12;
-
+//
 //https://leetcode.com/problems/jump-game/
 public class JumpGame {
     public boolean canJump(int[] A) {
-    	int index =0;
-    	while(index < A.length-1){
-    		index=index+A[index];
+    	int max =A[0];
+    	for(int i=1;i<A.length;i++){
+    		if(max>=i)
+    		 max = max > i+A[i] ? max : i+A[i];
     	}
-    	if(index == A.length-1 ) return true;
+    	if(max >= A.length-1) return true;
 		return false;      
     }
     public static void main(String[] args) {
@@ -15,5 +16,4 @@ public class JumpGame {
     	int[] A = {0,1};
     	System.out.print(aGame.canJump(A));
 	}
-
 }
