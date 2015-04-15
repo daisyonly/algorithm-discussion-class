@@ -1,7 +1,6 @@
 package tree;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 import week7.TreeNode;
@@ -9,7 +8,6 @@ import week7.TreeNode;
 //https://leetcode.com/problems/validate-binary-search-tree/
 public class ValidateBinarySearchTree {
     public boolean isValidBST(TreeNode root) {
-    	TreeNode preNode = null;
     	List<Integer> list = new ArrayList<Integer>();
     	dfs(list,root);
     	if(list.size()==0 || list.size() ==1) return true;
