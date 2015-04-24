@@ -33,8 +33,8 @@ public class DivideTwoIntegersOfMine {
 
 	public int divide2(int dividend, int divisor) {
 		/******* handling the case of overflow *******/
-		if (divisor == 1)
-			return dividend;
+		//if (divisor == 1)
+			//return dividend;
 		if (dividend == Integer.MIN_VALUE && Math.abs(divisor) == 1)
 			return Integer.MAX_VALUE;
 		/*********************************************/
@@ -60,7 +60,7 @@ public class DivideTwoIntegersOfMine {
 
 	public static void main(String[] args) {
 		DivideTwoIntegersOfMine aDivideTwoIntegers = new DivideTwoIntegersOfMine();
-		System.out.println(aDivideTwoIntegers.divide(-2147483648, 2));
+		System.out.println(aDivideTwoIntegers.divide2(1, 1));
 		System.out.println(Math.abs(Integer.MAX_VALUE));
 	}
 
