@@ -1,6 +1,5 @@
 package week14;
 
-import java.awt.Checkbox;
 import java.util.LinkedList;
 import java.util.List;
 
