@@ -9,11 +9,13 @@ public class WildcardMatching {
 			if(p.charAt(i) !='*') dp[0][i+1]= false;
 			else dp[0][i+1] = dp[0][i];
 		}
-		for(int i=0;i<s.length();i++){
-			for(int j=0;j<p.length();j++){
-				if(s.charAt(i)==p.charAt(j)||p.charAt(j)=='?') dp[i+1][j+1] =dp[i][j];
-				else if(s.charAt(i)!=p.charAt(j)){
-					
+		for(int i=0;i<p.length();i++){
+			for(int j=0;j<s.length();j++){
+				if(s.charAt(j)==p.charAt(i)||p.charAt(i)=='?') dp[i+1][j+1] =dp[i][j];
+				else if(p.charAt(i) =='*'){
+					dp[i+1][j+1]=dp[i][j];
+				}else{
+					dp[i+1][j+1] = false;
 				}
 			}
 		}
