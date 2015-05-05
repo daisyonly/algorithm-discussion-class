@@ -100,9 +100,7 @@ public class Learn {
 		Thread B = new Thread(new OutputB(r));
 		Thread C = new Thread(new OutputC(r));
 		A.start();
-		//Thread.sleep(1000);
 		B.start();
-		//Thread.sleep(1000);
 		C.start();	
 	}
 
