@@ -50,7 +50,7 @@ class OutputC implements Runnable{
 
 class Resource{
 	boolean flagA=true,flagB=false,flagC=false;
-	public void getA() {
+	public synchronized  void getA() {
 		while(!flagA){
 			try {
 				wait();
@@ -64,7 +64,7 @@ class Resource{
 		System.out.print('A');
 		notifyAll();
 	}
-    public void getB() {
+    public synchronized  void getB() {
     	while(!flagB){
 			try {
 				wait();
@@ -78,7 +78,7 @@ class Resource{
 		System.out.print('B');
 		notifyAll();
 	}
-    public void getC() {
+    public synchronized void getC() {
     	while(!flagC){
 			try {
 				wait();
