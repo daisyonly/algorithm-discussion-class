@@ -11,7 +11,7 @@ class OutputA implements Runnable{
 	public void run() {
 		// TODO Auto-generated method stub
 		for(int i=0;i<10;i++){
-			r.getA();;
+			r.getA();
 		}
 	}
 	
@@ -61,7 +61,7 @@ class Resource{
 		}
 		flagA =false;
 		flagB = true;
-		System.out.print('A');
+		System.out.println('A');
 		notifyAll();
 	}
     public synchronized  void getB() {
@@ -75,7 +75,7 @@ class Resource{
 		}
 		flagB =false;
 		flagC = true;
-		System.out.print('B');
+		System.out.println('B');
 		notifyAll();
 	}
     public synchronized void getC() {
@@ -89,18 +89,20 @@ class Resource{
 		}
 		flagC =false;
 		flagA = true;
-		System.out.print('C');
+		System.out.println('C');
 		notifyAll();
    	}
 }
 public class Learn {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Resource r = new Resource();	
 		Thread A = new Thread(new OutputA(r));
-		Thread B = new Thread(new OutputA(r));
-		Thread C = new Thread(new OutputA(r));
+		Thread B = new Thread(new OutputB(r));
+		Thread C = new Thread(new OutputC(r));
 		A.start();
+		//Thread.sleep(1000);
 		B.start();
+		//Thread.sleep(1000);
 		C.start();	
 	}
 

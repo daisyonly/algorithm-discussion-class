@@ -4,7 +4,7 @@
 package multithreading;
 import java.io.*;
 
-public class Print {
+public class APrint {
   // Print with a newline:
   public static void print(Object obj) {
     System.out.println(obj);

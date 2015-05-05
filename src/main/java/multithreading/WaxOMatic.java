@@ -1,7 +1,10 @@
 //: concurrency/waxomatic/WaxOMatic.java
 // Basic task cooperation.
 package multithreading;
-import java.util.concurrent.*;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 
 class Car {
@@ -32,15 +35,15 @@ class WaxOn implements Runnable {
   public void run() {
     try {
       while(!Thread.interrupted()) {
-    	  Print.printnb("Wax On! ");
+    	  APrint.printnb("Wax On! ");
         TimeUnit.MILLISECONDS.sleep(200);
         car.waxed();
         car.waitForBuffing();
       }
     } catch(InterruptedException e) {
-    	Print.print("Exiting via interrupt");
+    	APrint.print("Exiting via interrupt");
     }
-    Print.print("Ending Wax On task");
+    APrint.print("Ending Wax On task");
   }
 }
 
@@ -51,14 +54,14 @@ class WaxOff implements Runnable {
     try {
       while(!Thread.interrupted()) {
         car.waitForWaxing();
-        Print.printnb("Wax Off! ");
+        APrint.printnb("Wax Off! ");
         TimeUnit.MILLISECONDS.sleep(200);
         car.buffed();
       }
     } catch(InterruptedException e) {
-    	Print.print("Exiting via interrupt");
+    	APrint.print("Exiting via interrupt");
     }
-    Print.print("Ending Wax Off task");
+    APrint.print("Ending Wax Off task");
   }
 }
 
