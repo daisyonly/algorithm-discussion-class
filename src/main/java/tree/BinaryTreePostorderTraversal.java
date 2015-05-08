@@ -3,8 +3,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
-import week3.ListNode;
-
 public class BinaryTreePostorderTraversal {
 	public List<Integer> postorderTraversal(TreeNode root) {
 		List<Integer> ans =  new LinkedList<Integer>();     
