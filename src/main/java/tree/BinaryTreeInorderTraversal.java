@@ -4,8 +4,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
-import week7.TreeNode;
-
 //https://leetcode.com/problems/binary-tree-inorder-traversal/
 public class BinaryTreeInorderTraversal {
 	

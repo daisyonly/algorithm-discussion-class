@@ -1,6 +1,5 @@
-package fre3;
+package tree;
 
-import week7.TreeNode;
 
 //https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
 public class ConvertSortedArraytoBinarySearchTree {

@@ -1,8 +1,6 @@
-package fre3;
+package tree;
 
 import java.util.HashMap;
-
-import week7.TreeNode;
 
 public class ConstructBinaryTreefromInorderandPostorderTraversal {
 	HashMap<Integer, Integer> map;

@@ -1,4 +1,5 @@
-package week8;
+package tree;
+
 
 public class PopulatingNextRightPointersinEachNodeII2 {
 	

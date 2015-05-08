@@ -1,9 +1,7 @@
-package week8;
+package tree;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import week7.TreeNode;
 
 public class ConstructBinaryTreefromPreorderandInorderTraversal {
    private Map<Integer,Integer> map;

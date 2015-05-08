@@ -3,8 +3,6 @@ package tree;
 import java.util.ArrayList;
 import java.util.List;
 
-import week7.TreeNode;
-
 //https://leetcode.com/problems/validate-binary-search-tree/
 public class ValidateBinarySearchTree {
     public boolean isValidBST(TreeNode root) {

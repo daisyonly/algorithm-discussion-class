@@ -1,6 +1,5 @@
-package week9;
+package tree;
 
-import week7.TreeNode;
 
 //https://leetcode.com/problems/minimum-depth-of-binary-tree/
 public class MinimumDepthofBinaryTree {

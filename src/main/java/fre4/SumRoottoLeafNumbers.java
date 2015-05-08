@@ -3,7 +3,7 @@ package fre4;
 import java.util.LinkedList;
 import java.util.List;
 
-import week7.TreeNode;
+import tree.TreeNode;
 
 public class SumRoottoLeafNumbers {
 	

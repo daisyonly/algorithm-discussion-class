@@ -1,9 +1,7 @@
-package week8;
+package tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
-
-import week7.TreeNode;
 
 public class TreeLinkNode {
 	

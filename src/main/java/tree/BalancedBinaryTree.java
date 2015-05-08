@@ -1,6 +1,5 @@
-package week8;
+package tree;
 
-import week7.TreeNode;
 
 public class BalancedBinaryTree {
 	 class NodeInfo{

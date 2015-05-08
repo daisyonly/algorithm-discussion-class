@@ -1,9 +1,8 @@
-package fre4;
+package tree;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import week7.TreeNode;
 
 public class BinaryTreeLevelOrderTraversal {
 	public List<List<Integer>> levelOrder(TreeNode root) {
