@@ -12,8 +12,25 @@ public class MaximumGap {
 			 maxNum = nums[i]>maxNum? nums[i]:maxNum;
 			 minNum = nums[i]<minNum? nums[i]:minNum;
 		 }
-		 int bucketNum = (maxNum-minNum+1);
-		 return 0;
+		 int gap = (maxNum-minNum)/nums.length+1;
+		 int minBucket[] = new int[nums.length+1];
+		 int maxBucket[] = new int[nums.length+1];
+		 Arrays.fill(minBucket, Integer.MAX_VALUE);
+		 Arrays.fill(maxBucket, Integer.MIN_VALUE);
+		 for(int i=0;i<nums.length;i++){
+			 int index = (nums[i]-minNum)/gap;
+			 minBucket[index] = nums[i]<minBucket[index]? nums[i]:minBucket[index];
+			 maxBucket[index] = nums[i]>maxBucket[index]? nums[i]:maxBucket[index];
+		 }
+		 int maxGap=gap;
+		 int preMax = minNum;
+		 for(int i=0;i<nums.length+1;i++){
+			if(minBucket[i]==Integer.MAX_VALUE && maxBucket[i]==Integer.MIN_VALUE) continue;
+			int tmp = minBucket[i]-preMax;
+			maxGap = tmp>maxGap? tmp:maxGap;
+			preMax = maxBucket[i];
+		 }
+		 return maxGap;
 	        
 	 }
 	 
@@ -55,6 +72,12 @@ public class MaximumGap {
 		    }
 		    maxGap = Math.max(maxGap, max - previous); // updata the final max value gap
 		    return maxGap;
+	}
+	 public static void main(String[] args) {
+		 MaximumGap aGap= new MaximumGap();
+		 int[] nums = {1,2,3,4,10};
+		 System.out.println(aGap.maximumGap(nums));
+		 
 	}
 
 }
