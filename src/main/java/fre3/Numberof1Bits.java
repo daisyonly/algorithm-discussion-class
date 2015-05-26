@@ -6,7 +6,14 @@ public class Numberof1Bits {
 	 public int hammingWeight(int n) {
 	   int ans =0;  	
 	   while(n!=0){
-		   n=n&(n-1);
+		   System.out.println(Integer.toBinaryString(n));
+		   System.out.println(n);
+		   System.out.println(Integer.toBinaryString(n-1));
+		   System.out.println(n-1);
+		   n=n & (n-1);
+		   System.out.println(Integer.toBinaryString(n));
+		   System.out.println(n);
+		   System.out.println();
 		   ans++;
 	   }     
 	   return ans;
@@ -23,7 +30,11 @@ public class Numberof1Bits {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Numberof1Bits a = new Numberof1Bits();
-		System.out.println(a.hammingWeight(8));
+		System.out.println(a.hammingWeight(-1));
+		System.out.println(Integer.MIN_VALUE+1);
+		System.out.println(0xFFFFFFFF);
+		//int ab = Integer.MIN_VALUE;
+		//System.out.println(ab>>>1);
 
 	}
 

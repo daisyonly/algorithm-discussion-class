@@ -1,6 +1,5 @@
 package greedy;
 
-import java.util.Arrays;
 
 public class Candy {
 	 public int candy(int[] ratings) {

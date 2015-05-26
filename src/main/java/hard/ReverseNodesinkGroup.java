@@ -1,7 +1,5 @@
 package hard;
 
-import com.sun.org.apache.bcel.internal.generic.RETURN;
-
 import week3.ListNode;
 
 public class ReverseNodesinkGroup {
