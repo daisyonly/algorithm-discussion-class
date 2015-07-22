@@ -6,9 +6,9 @@ public class QuickSort {
 	
 	public void quickSort(int [] data,int start, int end) {
 		if(start >= end) return;
-		int[] index = threeWayPartition(data,start,end);
-		quickSort(data, start, index[0]);
-		quickSort(data, index[1], end);
+		int index = partition(data,start,end);
+		quickSort(data, start, index-1);
+		quickSort(data, index+1, end);
 	}
 
 	@SuppressWarnings("unused")
