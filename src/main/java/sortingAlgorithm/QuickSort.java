@@ -11,7 +11,6 @@ public class QuickSort {
 		quickSort(data, index+1, end);
 	}
 
-	@SuppressWarnings("unused")
 	private int partition(int[] data, int start, int end) {
 		Random random = new Random();
 		int index = random.nextInt(end - start + 1)+ start;
@@ -26,6 +25,7 @@ public class QuickSort {
 		swap(data, ++small, end);
 		return small;
 	}
+	@SuppressWarnings("unused")
 	private int[] threeWayPartition(int[] data, int start, int end){
 		int[] ans = {-1,-1};
 		Random random = new Random(); 

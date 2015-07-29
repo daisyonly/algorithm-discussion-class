@@ -18,7 +18,7 @@ public class CourseSchedule {
 			list[prerequisites[i][0]].add(prerequisites[i][1]);
 		}
 		for(int i=0;i<numCourses;++i){
-			if(dfs(list,visited,i)==false) return false;
+			//if(dfs(list,visited,i)==false) return false;
 		}
 		
 		return true;
@@ -35,7 +35,7 @@ public class CourseSchedule {
 			}
 		}
 		visited[index]=2;
-		return true;
+		return 1;
 	}
 
 	public static void main(String[] args) {
