@@ -22,4 +22,8 @@ public class Dijkstra {
 					min[i]=min[k]+mat[pre[i]=k][i];
 		}
 	}
+	public static void main(String[] args) {
+		int a;
+		System.out.println(a=8);
+	}
 }

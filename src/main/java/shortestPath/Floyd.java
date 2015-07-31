@@ -10,17 +10,16 @@ public class Floyd {
 	//#define inf 1000000000
 	//typedef int elem_t;
 
-	void floyd_warshall(int n,int mat[][],int min[][],int pre[][]){
-		int i,j,k;
-		for (i=0;i<n;i++){
-			for (j=0;j<n;j++){
+	public void floyd_warshall(int n,int mat[][],int min[][],int pre[][]){
+		for (int i=0;i<n;i++){
+			for (int j=0;j<n;j++){
 				min[i][j] = mat[i][j];
 				pre[i][j]=(i==j)?-1:i;
 			}
 		}
-		for (k=0;k<n;k++)
-			for (i=0;i<n;i++)
-				for (j=0;j<n;j++)
+		for (int k=0;k<n;k++)
+			for (int i=0;i<n;i++)
+				for (int j=0;j<n;j++)
 					if (min[i][k]+min[k][j]<min[i][j]){
 						min[i][j]=min[i][k]+min[k][j];
 						pre[i][j]=pre[k][j];

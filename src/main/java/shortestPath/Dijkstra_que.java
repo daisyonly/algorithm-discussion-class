@@ -2,6 +2,7 @@ package shortestPath;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 import java.util.PriorityQueue;
 
 public class Dijkstra_que {
@@ -23,7 +24,7 @@ public class Dijkstra_que {
 		
 	}
 
-	public void dijkstra(int s,int n,ArrayList<Edge> graph[])
+	public int[] dijkstra(int s,int n,ArrayList<Edge> graph[])
 	{
 		PriorityQueue<Node> q = new PriorityQueue<Node>(n+1,
 				new Comparator<Node>() {
@@ -60,5 +61,13 @@ public class Dijkstra_que {
 					q.add(point);
 				}
 		}
+		return dis;
+	}
+	public static void main(String[] args) {
+		Dijkstra_que testDijkstra_que = new Dijkstra_que();
+		List<Edge> graph[]= new List[3];
+		graph[0]=new ArrayList<Edge>();
+		//graph[0].add(new)
+		
 	}
 }
