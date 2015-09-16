@@ -28,7 +28,7 @@ public class DijkstraQue {
 		int n=graph.length;
 		int dis[]=new int[n];
 		boolean flag[]=new boolean[n];
-		PriorityQueue<Node> que= new PriorityQueue<Node>(new Comparator<Node>() {
+		PriorityQueue<Node> que= new PriorityQueue<Node>(n, new Comparator<Node>() {
 			public int compare(Node a, Node b) {
 				if (a.dis < b.dis)
 					return 1;
