@@ -20,7 +20,7 @@ public class Kruskal {
 		if(vset[x] !=x) vset[x] = Find(vset[x]);
 		return vset[x];
 	}
-	private boolean uni(int a,int b){
+	private boolean union(int a,int b){
 		a=Find(a);
 		b=Find(b);
 		if(a==b) return false;
@@ -37,7 +37,6 @@ public class Kruskal {
 		Arrays.sort(E,new Comparator<Edge>() {
 			@Override
 			public int compare(Edge o1, Edge o2) {
-				// TODO Auto-generated method stub
 				if(o1.val<o2.val) return 1;
 				else return -1;
 			}			
@@ -48,7 +47,7 @@ public class Kruskal {
 		int k=1;                       //表示当前构造最小生成树的第几条边，初值为1；
 		int j=0;                       //表示E中边的下标，初值为1；
 		while(k<vexnum && j<E.length){             //生成的边数小于n时循环；			
-			if(uni(E[j].begin,E[j].end)){    //两顶点属于不同的集合，该边是最小生成树的边；
+			if(union(E[j].begin,E[j].end)){    //两顶点属于不同的集合，该边是最小生成树的边；
 				sum+=E[j].val;
 				k++;                 //生成边数增1；
 			}
